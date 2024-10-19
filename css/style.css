@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+:root {
+    --background-color: #1a1c33;
+    --menu-background-color: #20242d;
+    --highlight-color: #6ff6fe;
+    --accent-color: #01eefe;
+    --text-color: #ffffff;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+header {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    padding: 15px 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header-content h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+.header-content p {
+    margin: 5px 0 0;
+    font-size: 14px;
+}
+
+#sidebar {
+    background-color: var(--menu-background-color);
+    color: var(--text-color);
+    width: 260px;
+    padding: 20px;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+}
+
+#profile {
+    text-align: center;
+}
+
+#profile img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+#profile h1 {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+#sidebar ul {
+    padding: 0;
+    list-style: none;
+}
+
+#sidebar ul li {
+    margin: 20px 0;
+}
+
+#sidebar ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 16px;
+}
+
+#sidebar ul li a:hover {
+    color: var(--accent-color);
+}
+
+#content {
+    margin-left: 280px;
+    padding: 20px;
+    max-width: 900px; /* Ajustar contenido en pantalla grande */
+}
+
+#content section {
+    margin-bottom: 40px;
+}
+
+#content h2 {
+    color: var(--highlight-color);
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+#content p {
+    color: var(--text-color);
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background-color: var(--highlight-color);
+    margin: 20px 0;
+}
+
+/* Galería de proyectos */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas en pantallas grandes */
+    gap: 20px;
+}
+
+.project {
+    text-align: center;
+}
+
+.project img {
+    width: 100%;
+    height: 150px; /* Reducción de la altura de las imágenes */
+    object-fit: cover;
+}
+
+.project h3 {
+    font-size: 18px;
+    margin: 10px 0;
+    color: var(--highlight-color);
+}
+
+.project p {
+    font-size: 14px;
+}
+
+.email-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.email-button {
+    background-color: var(--accent-color);
+    padding: 10px;
+    text-align: center;
+    color: var(--text-color);
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.email-button:hover {
+    background-color: var(--highlight-color);
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--menu-background-color);
+    color: var(--text-color);
+}
+
+/* Animación para la entrada de contenido */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#content {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* Media Queries para la responsividad */
+@media (max-width: 1024px) {
+    #content {
+        margin-left: 0;
+        padding: 20px;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr 1fr; /* 2 columnas en pantallas medianas */
+    }
+}
+
+@media (max-width: 768px) {
+    #sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    #content {
+        margin-left: 0;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr; /* 1 columna en pantallas pequeñas */
+    }
+
+    body {
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    .project img {
+        height: 120px; /* Menor tamaño de imagen en pantallas pequeñas */
+    }
+}
